@@ -1,1 +1,13 @@
-console.log("Hola a todos soy una api con nodejs y express y estoy funcionando correctamente");
+const express = require('express');
+
+const app = express();
+require('dotenv').config();
+
+app.get('/', (req, res) => {
+  res.send('Hola mundo');
+});
+const PORT = process.env.PORT || 9000;
+
+app.listen(PORT, () => {
+  console.log(`escuchando en el puerto ${PORT}`);
+});
